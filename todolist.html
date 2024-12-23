@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnList - Muhammad Shahkaar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="todo-app">
+            <h1>LearnList <img src="icon.png" alt="icon"></h1>
+            <div class="row">
+                <label for="input-box" class="visually-hidden">Enter new topic to learn</label>
+                <input type="text" 
+                       id="input-box" 
+                       placeholder="Enter topic to learn"
+                       aria-label="Enter new topic to learn"
+                       onkeypress="if(event.key === 'Enter') addTask()">
+                <button onclick="addTask()" aria-label="Add task">Add</button>
+            </div>
+            <div class="filters">
+                <button onclick="filterTasks('all')" class="filter-btn active">All</button>
+                <button onclick="filterTasks('active')" class="filter-btn">Active</button>
+                <button onclick="filterTasks('completed')" class="filter-btn">Completed</button>
+                <button onclick="clearCompleted()" class="clear-btn">Clear Completed</button>
+            </div>
+            <div class="task-stats">
+                <span id="task-counter">0 tasks remaining</span>
+            </div>
+            <ul id="list-container">
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
